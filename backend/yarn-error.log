@@ -1,0 +1,32 @@
+Arguments: 
+  /usr/bin/node/bin/node /home/cjdenio/.npm-global/bin/yarn add express ws
+
+PATH: 
+  /home/cjdenio/micro-editor:/home/cjdenio/spicetify-cli:/home/cjdenio/Documents/github/ffgen/bin:/home/cjdenio/lazygit:/home/cjdenio/nuke:/home/cjdenio/.fly/bin:/usr/lib/dart/bin:/home/cjdenio/lazydocker:/home/cjdenio/.pub-cache/bin:/home/cjdenio/flutter/.pub-cache/bin:/home/cjdenio/.poetry/bin:/home/cjdenio/cmake-3.18.0-rc3-Linux-x86_64/bin:/home/cjdenio/stripe:/home/cjdenio/mongodb:/home/cjdenio/vagrant:/home/cjdenio/go/bin:/usr/local/go/bin:/home/cjdenio/ngrok:/home/cjdenio/.deno/bin:/home/cjdenio/sqlite:/home/cjdenio/Android/Sdk/platform-tools:/home/cjdenio/gradle-6.3/bin:/home/cjdenio/android-studio/bin:/home/cjdenio/android-studio/jre/bin:/home/cjdenio/flutter/bin:/home/cjdenio/dotnet:/homd/cjdenio/.local/bin:/home/cjdenio/.npm-global/bin:/usr/bin/node/bin:/home/cjdenio/fgh:/home/cjdenio/swift/swift-5.3.1-RELEASE-ubuntu20.04/usr/bin:/home/cjdenio/.bin:/home/cjdenio/.texlive2020/bin/x86_64-linux:/home/cjdenio/.local/kitty.app/bin:/home/cjdenio/.cargo/bin:/home/cjdenio/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.18.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+
+npm manifest: 
+  {
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
