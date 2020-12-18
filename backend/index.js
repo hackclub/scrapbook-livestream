@@ -16,11 +16,15 @@ app.get("/", (req, res) => {
 app.post("/webhook", (req, res) => {
   res.end();
 
-  const {name, username} = req.body
+  try {
+    const {name, username} = req.body
 
-  wss.clients.forEach(client => {
-    client.send(`@${name} posted to their scrapbook! scrapbook.hackclub.com/${username}`)
-  })
+    wss.clients.forEach(client => {
+      client.send(`@${name} posted to their scrapbook! scrapbook.hackclub.com/${username}`)
+    })
+  } catch(e) {
+    console.log(e.message)
+  }
 })
 
 server.listen(process.env.PORT || 3000, () => {
