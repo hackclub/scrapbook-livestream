@@ -13,7 +13,7 @@ func main() {
 
 	initFile()
 	// c, _, err := websocket.DefaultDialer.Dial("ws://hackclub-scrapbook-livestream.herokuapp.com", nil)
-	c, _, err := websocket.DefaultDialer.Dial("ws://localhost:3000", nil)
+	c, _, err := websocket.DefaultDialer.Dial("ws://hackclub-scrapbook-livestream.herokuapp.com", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
