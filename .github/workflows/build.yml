@@ -13,5 +13,5 @@ jobs:
       - run: cd client && go build .
       - uses: actions/upload-artifact@v2
         with:
-          name: client
+          name: client-${{ matrix.os }}
           path: ./client/client
