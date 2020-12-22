@@ -9,19 +9,37 @@ import (
 )
 
 func main() {
-	queue := []string{}
+	for {
+		doTheThings()
+	}
+}
 
-	initFile()
+func doTheThings() {
+	log.Println("initializing...")
+	time.Sleep(2 * time.Second)
+	log.Println("connecting...")
+
+	dialer := &websocket.Dialer{}
+
 	// c, _, err := websocket.DefaultDialer.Dial("ws://hackclub-scrapbook-livestream.herokuapp.com", nil)
-	c, _, err := websocket.DefaultDialer.Dial("ws://hackclub-scrapbook-livestream.herokuapp.com", nil)
+	c, _, err := dialer.Dial("ws://localhost:3000", nil)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
+		return
 	}
 	defer c.Close()
 
+	queue := []string{}
+
+	initFile()
+
 	go func() {
 		for {
-			c.WriteMessage(websocket.TextMessage, []byte("ping"))
+			err = c.WriteMessage(websocket.TextMessage, []byte("ping"))
+			if err != nil {
+				log.Println(err)
+				break
+			}
 
 			if len(queue) > 0 {
 				writeToFile(queue[0])
@@ -41,6 +59,7 @@ func main() {
 		_, msg, err := c.ReadMessage()
 		if err != nil {
 			log.Println(err)
+			break
 		} else {
 			queue = append(queue, string(msg))
 			log.Printf("Adding to queue: %s", string(msg))
