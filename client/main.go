@@ -49,7 +49,12 @@ func main() {
 }
 
 func initFile() {
-	_, err := os.Create("./scrapbook_updates.txt")
+	file, err := os.Create("./scrapbook_updates.txt")
+	if err != nil {
+		log.Println(err)
+	}
+
+	err = file.Close()
 	if err != nil {
 		log.Println(err)
 	}
@@ -66,5 +71,10 @@ func writeToFile(stuff string) {
 		} else {
 			log.Println(i)
 		}
+	}
+
+	err = file.Close()
+	if err != nil {
+		log.Println(err)
 	}
 }
